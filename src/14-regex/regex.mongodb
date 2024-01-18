@@ -1,0 +1,15 @@
+use("platzi_store")
+
+//db.inventory.find({ "item.description": { $regex: /line/} })
+
+// no case sensitivity
+//db.inventory.find({ "item.description": { $regex: /LINE/i } })
+
+//documents ending with "line"
+//db.inventory.find({ "item.description": { $regex: /line$/i } })
+
+//documents that start with "single"
+//db.inventory.find({"item.description": { $regex: /^single/i } })
+
+//documents that start with "s" including line breaks
+db.inventory.find({ "item.description": { $regex: /^s/im } })

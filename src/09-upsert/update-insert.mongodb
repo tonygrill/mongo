@@ -1,0 +1,45 @@
+use("platzi_store")
+
+//db.iot.insertOne({
+//    sensor:  "A001",
+//    date: "2022-01-03",
+//    readings: [1212]
+//})
+
+
+// inserta el valor como un array
+//db.iot.updateOne({
+//    sensor: "A001",
+//    date: "2022-01-03",
+//},{ 
+//    $push: {
+//    readings: [2323]
+//}
+//})
+
+// para correguir eliminamos el valor
+
+//db.iot.updateOne({
+//    sensor: "A001",
+//    date: "2022-01-03",
+//    },{
+//        $pop: {
+//            readings: 1
+//        }
+//    })
+
+// lo volvemos a insertar de manera correcta
+
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-03"
+},{
+    $push:{
+        readings: 2323
+    }
+})
+
+//para ingresar el primer valor del dia usamos 
+//updateOne, para eliminarlo usamos updateOne con 
+// $pop y para agregarle un nuevo regirstro al array
+// usamos updateOne con $push

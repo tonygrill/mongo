@@ -1,0 +1,10 @@
+use("platzi_store")
+
+//Elimina solo un registro
+//db.productos.deleteOne({_id: 1 })
+
+//Elimina los que cumplan con la condición
+//db.productos.deleteMany({price:100})
+
+//Elimina toda la colección
+db.productos.drop()
